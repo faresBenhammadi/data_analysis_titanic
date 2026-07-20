@@ -47,6 +47,16 @@ Before performing the analysis, the dataset was inspected for potential issues.
 | Cabin | 687 | Excluded from the analysis due to excessive missing values |
 | Embarked | 2 | Kept as-is since it had no impact on the analyses performed |
 
+### Categorical cleaning
+
+The **Title** feature was extracted from the passenger names.
+
+Equivalent titles were standardized to avoid duplicate categories:
+
+- `Mlle` → `Miss`
+- `Mme` → `Mrs`
+- `Ms` → `Miss`
+
 Different cleaning strategies were discussed depending on the objective:
 
 - For **Machine Learning**, imputing missing values (e.g., using the median) would generally be preferred.
@@ -64,6 +74,7 @@ The notebook includes the following analyses:
 - Family Size vs Survival
 - Embarkation Port vs Survival
 - Ticket Fare vs Survival
+- Passenger Title vs Survival
 
 During the analysis, new features such as **Age Group**, **Family Size**, and **Fare Group** were created to improve interpretability.
 
@@ -79,6 +90,7 @@ The analysis revealed several interesting patterns:
 - Passengers traveling in small families generally had better survival rates than those traveling alone or in very large families.
 - Higher ticket fares were generally associated with higher survival rates.
 - Passengers embarking from Cherbourg showed the highest survival rate among the three embarkation ports.
+- Passenger titles showed strong differences in survival rates. Women-related titles (Mrs, Miss) had the highest survival rates, while Mr had the lowest among the common titles.
 
 ---
 
@@ -119,6 +131,9 @@ This project helped reinforce several fundamental data analysis skills:
 - Correlation analysis
 - Statistical interpretation
 - Drawing conclusions from real-world datasets
+- Regular expressions (feature extraction)
+- Categorical data cleaning
+- Feature engineering
 
 ---
 
